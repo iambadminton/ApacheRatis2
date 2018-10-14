@@ -156,17 +156,17 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.ratis</groupId>
             <artifactId>ratis-logservice</artifactId>
             <version>0.2.0</version>
-        </dependency>
+        </dependency>-->
 
-        <dependency>
+       <!-- <dependency>
             <groupId>org.apache.ratis</groupId>
             <artifactId>ratis-thirdparty</artifactId>
-            <version>${ratis.thirdparty.version}</version>
-        </dependency>
+            <version>0</version>
+        </dependency>-->
 
         <dependency>
             <groupId>org.apache.ratis</groupId>

@@ -37,7 +37,7 @@ class LeaderElection extends Daemon {
                 + responses.stream().map(ProtoUtils::toString).collect(Collectors.toList())
                 + " and " + exceptions.size() + " exception(s); " + server.getState());
         int i = 0;
-        for(Exception e : exceptions) {
+        for (Exception e : exceptions) {
             LOG.info("  " + i++ + ": " + e);
             LOG.trace("TRACE", e);
         }
@@ -71,6 +71,7 @@ class LeaderElection extends Daemon {
     LeaderElection(RaftServerImpl server) {
         this.server = server;
         //conf = server.getRaftConf();
+        conf = server.getState().getRaftConf();
 
         others = conf.getOtherPeers(server.getId());
         this.running = true;
@@ -150,6 +151,7 @@ class LeaderElection extends Daemon {
                 switch (r.result) {
                     case PASSED:
                         server.changeToLeader();
+
                         return;
                     case SHUTDOWN:
                         LOG.info("{} received shutdown response when requesting votes.",
@@ -216,7 +218,7 @@ class LeaderElection extends Daemon {
                         return logAndReturn(Result.PASSED, responses, exceptions, -1);
                     }
                 }
-            } catch(ExecutionException e) {
+            } catch (ExecutionException e) {
                 LOG.info("{} got exception when requesting votes: {}", server.getId(), e);
                 LOG.trace("TRACE", e);
                 exceptions.add(e);

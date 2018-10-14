@@ -115,8 +115,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.ratis:ratis-replicated-map:test-jar:tests:0.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.ratis:ratis-server:0.2.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.ratis:ratis-server:test-jar:tests:0.2.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.ratis:ratis-logservice:0.2.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.ratis:ratis-thirdparty:${ratis.thirdparty.version}" level="project" />
     <orderEntry type="library" name="Maven: org.apache.ratis:ratis-thirdparty-hadoop:${ratis.thirdparty.version}" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.10" level="project" />
     <orderEntry type="library" name="Maven: com.beust:jcommander:1.72" level="project" />
